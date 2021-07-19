@@ -1,0 +1,7 @@
+.toastify-success > div {
+    background-color: #69D2AA;
+  }
+  
+  .toastify-error > div {
+    background-color: red;
+  }
