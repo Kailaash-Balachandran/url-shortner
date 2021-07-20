@@ -2,8 +2,26 @@ version: '3'
 
 volumes:
     node_modules:
+    postgres_db:
 
 services:
+
+    # api:
+    #   container_name: url-shortner_api
+    #   build:
+    #     context: ./api/
+    #     dockerfile: ./Dockerfile
+    #   env_file:
+    #     - ./.env
+    #   volumes:
+    #     - ./api:/app/code
+    #     # If node_modules are installed on the host, don't sync them into the container
+    #     # because they are are installed on docker build and might cause trouble
+    #     # with OS specific modules and staleness there. This still allows to manually
+    #     # install the modules locally for code completion and running tests faster.
+    #     - /app/code/node_modules/
+    #   ports:
+    #     - "4000:4000"
 
     frontend:
         container_name: url-shortner_frontend
