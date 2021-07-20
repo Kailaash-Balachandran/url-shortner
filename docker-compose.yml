@@ -1,0 +1,23 @@
+version: '3'
+
+volumes:
+    node_modules:
+
+services:
+
+    frontend:
+        container_name: url-shortner_frontend
+        build:
+          context: ./frontend/
+          dockerfile: ./Dockerfile
+        env_file:
+          - ./.env
+        volumes:
+          - ./frontend:/app/code
+          # If node_modules are installed on the host, don't sync them into the container
+          # because they are are installed on docker build and might cause trouble
+          # with OS specific modules and staleness there. This still allows to manually
+          # install the modules locally for code completion and running tests faster.
+          - /app/code/node_modules/
+        ports:
+          - "3000:3000"

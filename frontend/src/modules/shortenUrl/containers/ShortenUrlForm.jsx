@@ -50,7 +50,7 @@ const ShortenUrlForm = () => {
         <ShortenUrlFormContainer>
             <form onSubmit={onSubmit} data-testid="shortenUrlForm">
                 <TextInputField testId="longURL" label="Url" placeholder="Url to shorten" onChange={onChange} value={longURL} />
-                <SubmitButton loading={loading} text="Bitlify" />
+                <SubmitButton loading={loading} text="Bitlify3" />
             </form>
             { !loading && bitlyInfo && <LinkView bitlyInfo={bitlyInfo} /> }
         </ShortenUrlFormContainer>
